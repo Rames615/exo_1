@@ -12,7 +12,7 @@
     <h1>Des exercises pratiques sur programmation orientée objet [POO]</h1>
     <h2>📆Jour-1</h2>
     <section>
-        <h3>Exercise-1: Créez une classe JeuVideo avec nom, prix et plateforme. Instanciez "Call of Duty" à 60€ sur PS5.</h3>
+        <h3><span class="exercise">Exercise-1:</span> Créez une classe JeuVideo avec nom, prix et plateforme. Instanciez "Call of Duty" à 60€ sur PS5.</h3>
 
         <?php
          class JeuVideo
@@ -48,7 +48,7 @@
     </section>
 
     <section>
-        <h3>Exercise-2: Ajoutez une méthode pour vérifier si le jeu est en stock. Si stock < 1, afficher "Rupture" .</h3>
+        <h3><span class="exercise">Exercise-2:</span> Ajoutez une méthode pour vérifier si le jeu est en stock. Si stock < 1, afficher "Rupture" .</h3>
                 <?php
                 class JeuVideo_1
                 {
@@ -104,7 +104,7 @@
     </section>
 
     <section>
-        <h3>Exercise-3: Créez 5 jeux différents et affichez leurs informations complètes. </h3>
+        <h3><span class="exercise">Exercise-3:</span> Créez 5 jeux différents et affichez leurs informations complètes. </h3>
                 <?php
                 class JeuVideo2
                 {
@@ -161,113 +161,6 @@
                 
                 ?>
 
-    </section>
-
-     <h2>📆Jour-2</h2>
-    <section>
-        <h3>Exercise-1: Rendez les propriétés privées et créez des getters/setters. Le prix ne peut être négatif. </h3>
-
-        <?php
-            class JeuVideo3
-            {
-                // Propriétés privées (encapsulation)
-                private string $nom;
-                private float $prix;
-                private string $plateforme;
-                private int $stock;
-            
-                // 🔧 Constructeur
-                public function __construct(string $nom, float $prix, string $plateforme, int $stock)
-                {
-                    $this->setNom($nom);
-                    $this->setPrix($prix);
-                    $this->setPlateforme($plateforme);
-                    $this->setStock($stock);
-                }
-            
-                // 🧠 Getters (pour lire les valeurs)
-                public function getNom(): string
-                {
-                    return $this->nom;
-                }
-            
-                public function getPrix(): float
-                {
-                    return $this->prix;
-                }
-            
-                public function getPlateforme(): string
-                {
-                    return $this->plateforme;
-                }
-            
-                public function getStock(): int
-                {
-                    return $this->stock;
-                }
-            
-                // 🧱 Setters (pour modifier les valeurs avec contrôle)
-                public function setNom(string $nom): void
-                {
-                    $this->nom = $nom;
-                }
-            
-                public function setPrix(float $prix): void
-                {
-                    if ($prix < 0) {
-                        echo "⚠️ Erreur : le prix ne peut pas être négatif.<br>";
-                        $this->prix = 0; // on peut mettre 0 par défaut
-                    } else {
-                        $this->prix = $prix;
-                    }
-                }
-            
-                public function setPlateforme(string $plateforme): void
-                {
-                    $this->plateforme = $plateforme;
-                }
-            
-                public function setStock(int $stock): void
-                {
-                    $this->stock = $stock;
-                }
-            
-                // Méthode pour afficher les infos du jeu
-                public function afficherInfos(): void
-                {
-                    echo "<div style='border:1px solid #ccc; padding:10px; margin-bottom:10px; border-radius:8px;'>";
-                    echo "<strong>Nom :</strong> " . $this->getNom() . "<br>";
-                    echo "<strong>Prix :</strong> " . $this->getPrix() . " €<br>";
-                    echo "<strong>Plateforme :</strong> " . $this->getPlateforme() . "<br>";
-                    echo "<strong>Stock :</strong> " . $this->getStock() . "<br>";
-                    echo "</div>";
-                }
-            }
-    
-            // ✅ Test avec validation
-            $jeu1 = new JeuVideo3("Call of Duty", 60, "PS5", 3);
-            $jeu2 = new JeuVideo3("FIFA 25", -10, "PS5", 5); // prix négatif volontaire
-            
-            $jeu1->afficherInfos();
-            $jeu2->afficherInfos();
-            
-            // 🔁 Test du setter après instanciation
-            $jeu1->setPrix(-50); // devrait afficher un message d’erreur
-            $jeu1->afficherInfos();
-        ?>
-    </section>
-
-    <section>
-        <h3>Exercise-2: </h3>
-                <?php
-                
-                ?>
-
-    </section>
-    <section>
-        <h3>Exercise-3:  </h3>
-                <?php
-                ?>
     </section>
 </body>
 
